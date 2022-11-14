@@ -1,0 +1,76 @@
+header {
+    /* background: radial-gradient(#51acc7, transparent); */
+    background-image: url("../images/clouds_retina4.png");
+    background-color: powderblue;
+    background-size: 1928px;
+    background-repeat: repeat-x;
+    width: 100%;
+}
+
+.shade-li:hover {
+    box-shadow: rgb(0 0 0) 0 1px 15px;
+    transition-duration: .5s;
+}
+.shade{
+    box-shadow: rgb(0 0 0) 0 1px 15px;
+}
+nav ul li {
+    border-bottom: solid 3px white;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.carousel-border {
+    border-bottom: 10px solid #ffff;
+    border-left: 10px solid #ffff;
+    border-right: 10px solid #ffff;
+    border-top: 10px solid #ffff;
+    border-radius: 8px;
+}
+
+/* previous - next styles */
+.fa-stack-1x {
+    color: black;
+}
+
+.bg-level-2-first-part {
+    background-image: url("../images/pattern_balloons@2x.png");
+    background-size: 381px;
+    background-position: right top;
+    background-repeat: repeat-x;
+}
+
+.bg-level-2-second-part {
+    background-image: url("../images/pattern_balloons@2x.png");
+    background-size: 381px;
+    background-repeat: repeat-x;
+    width: 100%;
+}
+
+.carousel-control-prev {
+    opacity: 0.8;
+}
+
+.carousel-control-next {
+    opacity: 0.8;
+}
+
+.spikes {
+    position: relative;
+    background: powderblue;
+    height: 1vh;
+}
+
+.spikes::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: -0%;
+    top: 100%;
+    z-index: 10;
+    display: block;
+    height: 50px;
+    background-size: 50px 100%;
+    background-image: linear-gradient(135deg, powderblue 25%, transparent 25%), linear-gradient(225deg, powderblue 25%, transparent 25%);
+    background-position: 0 0;
+}
+
