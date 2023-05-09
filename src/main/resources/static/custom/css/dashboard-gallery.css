@@ -1,0 +1,133 @@
+body {
+    overflow-x: hidden;
+}
+
+/*transversal*/
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+/*End transversal*/
+
+.form-group {
+    /*background-color: #ffffff;
+    width: 90%;
+    max-width: 34.37em;
+    position: relative;
+    margin: 3.12em auto;
+    padding: 3.12em 1.25em;
+    border-radius: 0.43em;
+    box-shadow: 0 1.25em 2.18em rgb(1, 28, 71, 0.3);*/
+
+    box-shadow: 0 1em 1em rgb(1 28 71 / 20%);
+    padding: 2.12em 1.25em;
+    border-radius: 0.43em;
+    margin: 3.12em auto;
+}
+input[type="file"] {
+    display: none;
+}
+.wrapper-form label {
+    display: block;
+    position: relative;
+    background-color: mediumturquoise;
+    color: #ffffff;
+    /*  font-size: 1.12em;*/
+    font-weight: 400;
+    text-align: center;
+    width: 10.75em;
+    /*padding: 1.12em 0;*/
+    margin: auto;
+    border-radius: 0.31em;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+}
+/*#num-of-files {
+  font-weight: 400;
+  text-align: center;
+  margin: 1.25em 0 1.87em 0;
+}*/
+ul {
+    list-style-type: none;
+    padding: 0;
+
+}
+.wrapper-form li {
+    font-weight: 500;
+    background-color: #eff5ff;
+    color: #025bee;
+    margin-bottom: 1em;
+    /*padding: 1.1em 1em;*/
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: orchid !important;
+    border-color: orchid;
+    font-weight: 400;
+}
+
+#inputPosition{
+    width: 120px;
+}
+
+
+/*Loading*/
+.loader-container{
+    width:100%;
+    height:100vh;
+    background-color:#dddddd ;
+    position: fixed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity: 0.6;
+    z-index: 2000;
+}
+.loader{
+    width:50px;
+    height:50px;
+    border:5px solid;
+    color:#3498db;
+    border-radius:50%;
+    border-top-color:transparent;
+    animation: loader 1.2s linear infinite;
+}
+@keyframes loader{
+    25%{
+        color:#2ecc71;
+    }
+    25%{
+        color:#f1c40f;
+    }
+    25%{
+        color:#e74c3c;
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+/*End loading*/

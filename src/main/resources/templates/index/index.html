@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pelukids</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/index/index.css}">
+    <script src="https://kit.fontawesome.com/468c840426.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="loader-container fixed-top">
+    <div class="loader"></div>
+</div>
+
+<header class="pt-3 " id="home">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-default container">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/images/logo.png}" width="100" height="92"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                style="border-color: #ff0079;border-radius: 20px;">
+            <a class="navbar-brand mr-0 mr-md-3" href="#">
+                <h5 class="lead" style="color:#ff0079;">Menú</h5>
+            </a>
+            <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars" style="color:#ff0079; font-size:28px;"></i>
+                </span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+                <!--<li class="nav-item text-center shade shade-li" id="li-1"
+                    style="background-color: #04a3ca; margin-right: 2px;">
+                    <a class="nav-link text-white" href="#"><i class="fa-solid fa-house"></i> INICIO</a>
+                </li>-->
+                <li class="nav-item text-center shade-li"
+                    style="background-color: #04a3ca; margin-right: 2px;">
+                    <a class="nav-link text-white" href="#home"><i class="fa-solid fa-house"></i> INICIO</a>
+                </li>
+                <li class="nav-item text-center shade-li" style="background-color: #EDBF47;margin-right: 2px;">
+                    <a class="nav-link text-white" href="#about"><i class="fa-solid fa-user-group"></i> NOSOTROS</a>
+                </li>
+                <li class="nav-item  text-center shade-li " style="background-color: #914368;margin-right: 2px;">
+                    <a class="nav-link text-white" href="#testimonials"><i class="fa-solid fa-comment"></i> TESTIMONIOS</a>
+                </li>
+                <li class="nav-item  text-center shade-li" style="background-color: #EC774B;margin-right: 2px;">
+                    <a class="nav-link text-white" href="#services"><i class="fa-solid fa-hand-holding-heart"></i>
+                        SERVICIOS</a>
+                </li>
+                <li class="nav-item  text-center shade-li" style="background-color:#C389CE;margin-right: 2px;">
+                    <a class="nav-link text-white" href="#gallery"><i class="fa-solid fa-camera"></i> GALERÍA</a>
+                </li>
+                <li class="nav-item  text-center shade-li " style="background-color: #6FC191;margin-right: 2px;">
+                    <a class="nav-link text-white" href="#contact"><i class="fa-solid fa-envelope"></i> CONTACTO</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="pt-5 pb-5">
+        <div class="row m-0 pb-1">
+            <div class="col bg-level-2-first-part">
+            </div>
+            <div class="container">
+                <div id="carouselExampleIndicators" class="carousel slide carousel-border" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" th:each="slider,iter : ${dataIndex.sliderDtoList}"
+                            th:attr="data-slide-to=${iter.index}"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item" th:each="slider,iter: ${dataIndex.sliderDtoList}"
+                             th:classappend="${iter.index}== 0  ? 'active':''">
+                            <img class="d-block w-100" th:src="@{'/slider/'+${slider.img}}" alt="Second slide">
+                        </div>
+
+                    </div>
+                    <a class="carousel-control-prev" data-target="#carouselExampleIndicators" role="button"
+                       data-slide="prev">
+                        <span aria-hidden="true" class="fa-stack fa-2x" style="color: white;">
+                             <i class="fa-solid fa-square fa-stack-2x fa-2x"></i>
+                            <i class="fa fa-chevron-left fa-stack-1x fa-1x"></i>
+                        </span>
+
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" data-target="#carouselExampleIndicators" role="button"
+                       data-slide="next">
+                       <span aria-hidden="true" class="fa-stack fa-2x" style="color: white;">
+                             <i class="fa-solid fa-square fa-stack-2x fa-2x"></i>
+                            <i class="fa fa-chevron-right fa-stack-1x fa-1x"></i>
+                        </span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col bg-level-2-second-part"></div>
+        </div>
+    </div>
+
+    <p class="text-center " style="color: cadetblue;"><em>En <strong>PeluKids</strong> trabajamos para resaltar tu
+        belleza. Visitanos!</em>
+    </p>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <a type="button" href="#contact" class="btn btn-success rounded-pill">Contáctanos</a>
+            </div>
+        </div>
+    </div>
+    <div class="custom-shape-divider-bottom-1670046844">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                  opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                  opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                  class="shape-fill"></path>
+        </svg>
+    </div>
+</header>
+
+<section class="container" id="about">
+    <h3 class="mt-5  font-weight-light mb-4 text-uppercase" style="color:#f400b7;">¿Quiénes somos?</h3>
+    <p class="text-justify lead" style="white-space: pre-line" th:text="${dataIndex.howGloss}"></p>
+    <h5 class="text-lg-start font-weight-light mt-4 mb-1 text-uppercase" style="color:#f400b7;">Nosotras</h5>
+    <p class="lead" th:text="${dataIndex.weGloss}"></p>
+
+    <div class="mt-2 mb-5"></div>
+
+    <div class="row text-center">
+
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5" th:each="team,iter: ${dataIndex.teamDtoList}">
+            <div class="bg-white rounded shadow-sm py-5 px-4"><img th:src="@{'/profile/'+${team.img}}" alt=""
+                                                                   width="100"
+                                                                   class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h6 class="mb-0 lead" th:text="${team.name}">Areli Salazar</h6>
+            </div>
+        </div><!-- End -->
+    </div>
+    <hr class="style18 mt-5 mb-4">
+</section>
+
+<section class="container" id="services">
+    <h3 class="font-weight-light mb-4 text-uppercase" style="color:#f400b7;">Servicios</h3>
+    <p class="lead text-justify" th:text="${dataIndex.serviceGloss}"></p>
+
+    <ul class="ul-services" style="list-style: none;padding-left: 0px;">
+        <li th:each="service,iter: ${dataIndex.serviceDtoList}">
+            <p class="lead">
+                <i class="fa-solid fa-check" style="color:darkturquoise;"></i>
+                <span th:text="${service.description}" th:remove="tag"></span>
+            </p>
+        </li>
+    </ul>
+    <hr class="style18 mt-5 mb-4">
+</section>
+
+<section class="container" id="contact">
+    <h3 class="font-weight-light mb-4 text-uppercase" style="color:#f400b7;">Contacto</h3>
+    <p class="lead text-justify">Contáctanos vía WhatsApp, correo electrónico o completando el formulario y agenda tu
+        hora. ¡Te
+        esperamos!</p>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="wrapper">
+                <div class="row no-gutters mb-5">
+                    <div class="col-md-7">
+                        <div class="contact-wrap w-100 p-md-5 p-4">
+                            <form method="POST" id="contactForm" name="contactForm" class="contactForm"
+                                  novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label lead" for="name">Nombre</label>
+                                            <input type="text" class="form-control" name="name" id="name"
+                                                   placeholder="Nombre">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label lead" for="email">Email</label>
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                   placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label lead" for="subject">Teléfono</label>
+                                            <input type="text" class="form-control" name="subject" id="subject"
+                                                   placeholder="Teléfono">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label lead">Mensaje</label>
+                                            <textarea name="message" class="form-control" id="message" cols="30"
+                                                      rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" value="Enviar Mensaje" class="btn btn-primary">
+                                            <div class="submitting"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <iframe class="maps"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.579680582463!2d-70.66856848420558!3d-33.30365759738083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662b8623342be95%3A0xedd0c119a5751e2!2sAv.%20el%20Valle%20Central%2012400%2C%20Chicureo%2C%20Colina%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1sen!2scl!4v1670799168729!5m2!1sen!2scl"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="row no-gutters circles-contact">
+                    <div class="col-md-3 contact">
+                        <div class="dbox w-100 text-center">
+                            <div class="icon d-flex align-items-center justify-content-center"
+                                 style="background-color: #ecc24b;">
+                                <span class="fa fa-map-marker"></span>
+                            </div>
+                            <div class="text">
+                                <p><span>Dirección:</span> Av. El Valle Central 12400, Chicureo, Local 103</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 contact">
+                        <div class="dbox w-100 text-center">
+                            <div class="icon d-flex align-items-center justify-content-center"
+                                 style="background-color: #25d366;">
+                                <span class="fa-brands fa-whatsapp"></span>
+                            </div>
+                            <div class="text">
+                                <p><span>WhatsApp:</span> <a href="tel://1234567920">+56966791516</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 contact">
+                        <div class="dbox w-100 text-center">
+                            <div class="icon d-flex align-items-center justify-content-center instagram">
+                                <span class="fa-brands fa-instagram"></span>
+                            </div>
+                            <div class="text">
+                                <p><span>Instagram:</span> <a href="mailto:info@yoursite.com">pelukidzchamisero</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 contact">
+                        <div class="dbox w-100 text-center">
+                            <div class="icon d-flex align-items-center justify-content-center"
+                                 style="background-color: dodgerblue;">
+                                <span class="fa fa-paper-plane"></span>
+                            </div>
+                            <div class="text">
+                                <p><span>Email:</span> <a href="#">contacto@pelukidz.cl</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="style18 mt-5 mb-4">
+</section>
+
+<section class="container" id="gallery">
+    <h3 class="font-weight-light mb-4 text-uppercase" style="color:#f400b7;">Galería</h3>
+    <div class="row">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-6 thumb" th:each="gallery,iter: ${dataIndex.galleryDtoList}">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"
+                   th:attr="data-image='/gallery/'+${gallery.img}"
+                   data-target="#image-gallery">
+                    <img class="img-thumbnail img-gallery"
+                         th:src="@{'/gallery/'+${gallery.img}}"
+                         alt="Another alt text">
+                </a>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="image-gallery-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                                class="sr-only">Close</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="image-gallery-image" class="img-responsive col-md-12" src="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i
+                                class="fa fa-arrow-left"></i>
+                        </button>
+
+                        <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i
+                                class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="style18 mt-5 mb-4">
+</section>
+
+<section class="container testimonios" id="testimonials">
+    <h3 class="font-weight-light mb-5 text-uppercase" style="color:#f400b7;">Testimonios</h3>
+    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators2" th:each="testimonial,iter: ${dataIndex.testimonialDtoList}"
+                th:attr="data-slide-to=${iter.index}" th:classappend="${iter.index}== 0  ? 'active':''"
+                class="bg-secondary"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item mb-5 text-center" th:each="testimonial,iter: ${dataIndex.testimonialDtoList}"
+                 th:classappend="${iter.index}== 0  ? 'active':''">
+                <ul class="p-0">
+                    <i class="fa-solid fa-star" style="color:#EDBF47;"></i>
+                    <i class="fa-solid fa-star" style="color:#EDBF47;"></i>
+                    <i class="fa-solid fa-star" style="color:#EDBF47;"></i>
+                    <i class="fa-solid fa-star" style="color:#EDBF47;"></i>
+                    <i class="fa-solid fa-star" style="color:#EDBF47;"></i>
+                </ul>
+                <h5 th:text="${testimonial.name}"></h5>
+                <p><em th:text="${testimonial.description}"></em>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer mt-5">
+    <div class="custom-shape-divider-top-1671629721 mb-5 mt-5">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                  opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                  opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                  class="shape-fill"></path>
+        </svg>
+    </div>
+    <div class="container">
+        <div class="footer-top">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 about-footer">
+                    <h3>Contacto </h3>
+                    <ul>
+                        <li><a href="tel:(010) 1234 4321"><i
+                                class="fas fa-phone fa-flip-horizontal"></i>+56966791516</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i>
+                            Av. El Valle Central 12400,
+                            <br/>Chicureo,
+                            <br/>Local 103
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-4 page-more-info">
+                    <div class="footer-title">
+                        <h4>Links de página</h4>
+                    </div>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="#gallery">Galería</a></li>
+                        <li><a href="#testimonials">Testimonios</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-4 open-hours">
+                    <div class="footer-title">
+                        <h4>Horarios de atención</h4>
+                    </div>
+                    <table class="table text-white">
+                        <tbody>
+                        <tr>
+                            <td><i class="far fa-clock"></i>Lunes a viernes</td>
+                            <td>11:00am - 07:00pm</td>
+                        </tr>
+                        <tr>
+                            <td><i class="far fa-clock"></i>Sábado y Domingo</td>
+                            <td>11:00am - 04:00pm</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <ul class="footer-social">
+                        <li><a href="" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>@ 2023 Pelukidz, All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" href="#" style="background:#ffc107" class="btn btn-light btn-lg back-to-top" role="button"><i
+        class="fas fa-chevron-up"></i></a>
+
+
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-ui.min.js}"></script>
+<script th:src="@{/index/index.js}"></script>
+</body>
+</html>
